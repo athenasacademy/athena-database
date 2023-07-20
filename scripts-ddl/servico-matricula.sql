@@ -1,8 +1,6 @@
--- Exclusão das tabelas, caso já existam
 DROP TABLE IF EXISTS detalhe_contrato;
 DROP TABLE IF EXISTS contrato;
 
--- Criação da tabela contrato
 CREATE TABLE contrato (
   id SERIAL PRIMARY KEY,
   contrato VARCHAR(100) NOT NULL,
@@ -12,7 +10,6 @@ CREATE TABLE contrato (
   data_alteracao TIMESTAMP
 );
 
--- Criação da tabela detalhe_contrato
 CREATE TABLE detalhe_contrato (
   id SERIAL PRIMARY KEY,
   codigo_aluno VARCHAR(50) NOT NULL,
