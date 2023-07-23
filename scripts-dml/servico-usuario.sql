@@ -1,6 +1,7 @@
 INSERT INTO perfil (perfil, descricao_perfil) VALUES
-  ('Admin', 'Perfil de administrador do sistema'),
-  ('Aluno', 'Perfil de aluno do sistema'),
+  ('Administrador', 'Perfil para usuários administradores.'),
+  ('Usuario', 'Perfil para usuários comuns.'),
+  ('Aluno', 'Perfil para usuários que são alunos.');
 
 INSERT INTO usuario (usuario, email, senha_hash, id_detalhe_usuario, id_perfil) VALUES
   ('admin01', 'admin01@example.com', 'senha_hash_admin01', 1, 1),
