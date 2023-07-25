@@ -37,7 +37,7 @@ CREATE TABLE telefone (
   telefone_recado VARCHAR(20)
 );
 
-CREATE TABLE aluno_detalhes (
+CREATE TABLE detalhe (
   id SERIAL PRIMARY KEY,
   id_aluno INTEGER REFERENCES aluno(id),
   codigo_contrato VARCHAR(50),
