@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS aluno_detalhes;
-DROP TABLE IF EXISTS documento;
 DROP TABLE IF EXISTS endereco;
 DROP TABLE IF EXISTS telefone;
 DROP TABLE IF EXISTS aluno;
