@@ -8,6 +8,7 @@ CREATE TABLE aluno (
   id SERIAL PRIMARY KEY,
   nome VARCHAR(100) NOT NULL,
   sobrenome VARCHAR(100) NOT NULL,
+  cpf VARCHAR(11) NOT NULL,
   sexo CHAR(1) NOT NULL,
   data_nascimento DATE NOT NULL,
   email VARCHAR(100) NOT NULL,
@@ -15,7 +16,7 @@ CREATE TABLE aluno (
   ativo BOOLEAN NOT NULL DEFAULT true
 );
 
-CREATE TABLE documento (
+CREATE TABLE endereco (
   id SERIAL PRIMARY KEY,
   id_aluno INTEGER REFERENCES aluno(id),
   logradouro VARCHAR(100),
@@ -27,14 +28,6 @@ CREATE TABLE documento (
   cep VARCHAR(10),
   ativo BOOLEAN NOT NULL DEFAULT true,
   data_cadastro TIMESTAMP DEFAULT NOW()
-);
-
-CREATE TABLE endereco (
-  id SERIAL PRIMARY KEY,
-  id_aluno INTEGER REFERENCES aluno(id),
-  rg_numero VARCHAR(20),
-  rg_data_emissao DATE,
-  rg_org_expeditor VARCHAR(100)
 );
 
 CREATE TABLE telefone (
