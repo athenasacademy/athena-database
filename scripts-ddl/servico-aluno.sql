@@ -7,7 +7,7 @@ CREATE TABLE aluno (
   id SERIAL PRIMARY KEY,
   nome VARCHAR(100) NOT NULL,
   sobrenome VARCHAR(100) NOT NULL,
-  cpf VARCHAR(11) NOT NULL,
+  cpf VARCHAR(14) NOT NULL,
   sexo CHAR(1) NOT NULL,
   data_nascimento DATE NOT NULL,
   email VARCHAR(100) NOT NULL,
@@ -40,12 +40,13 @@ CREATE TABLE telefone (
 CREATE TABLE detalhe (
   id SERIAL PRIMARY KEY,
   id_aluno INTEGER REFERENCES aluno(id),
-  codigo_usuario VARCHAR(50) NOT NULL,
+  codigo_usuario INTEGER NOT NULL,
   data_usuario DATE NOT NULL,
-  codigo_inscricao VARCHAR(50) NOT NULL,
+  codigo_inscricao INTEGER NOT NULL,
   data_inscricao DATE NOT NULL,
-  codigo_matricula VARCHAR(50),
+  codigo_curso INTEGER NOT null,
+  codigo_matricula INTEGER,
   data_matricula DATE,
-  data_contrato  DATE,
-  codigo_contrato VARCHAR(50)
+  codigo_contrato INTEGER,
+  data_contrato DATE
 );
