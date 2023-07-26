@@ -11,7 +11,8 @@ CREATE TABLE aluno (
   sexo CHAR(1) NOT NULL,
   data_nascimento DATE NOT NULL,
   email VARCHAR(100) NOT NULL,
-  ativo BOOLEAN NOT NULL DEFAULT true
+  ativo BOOLEAN NOT NULL DEFAULT true,
+    data_cadastro TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE endereco (
