@@ -11,7 +11,6 @@ CREATE TABLE aluno (
   sexo CHAR(1) NOT NULL,
   data_nascimento DATE NOT NULL,
   email VARCHAR(100) NOT NULL,
-  data_inscricao DATE NOT NULL,
   ativo BOOLEAN NOT NULL DEFAULT true
 );
 
@@ -40,9 +39,12 @@ CREATE TABLE telefone (
 CREATE TABLE detalhe (
   id SERIAL PRIMARY KEY,
   id_aluno INTEGER REFERENCES aluno(id),
-  codigo_contrato VARCHAR(50),
-  codigo_inscricao VARCHAR(50),
-  data_matricula DATE,
+  codigo_usuario VARCHAR(50) NOT NULL,
+  data_usuario DATE NOT NULL,
+  codigo_inscricao VARCHAR(50) NOT NULL,
+  data_inscricao DATE NOT NULL,
   codigo_matricula VARCHAR(50),
-  codigo_usuario VARCHAR(50)
+  data_matricula DATE,
+  data_contrato  DATE,
+  codigo_contrato VARCHAR(50)
 );
