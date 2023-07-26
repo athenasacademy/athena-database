@@ -12,8 +12,7 @@ CREATE TABLE matricula_aluno (
     ativa BOOLEAN NOT null default false,
     codigo_aluno INTEGER NOT NULL,
     nome_aluno VARCHAR(100) NOT NULL,
-    data_matricula DATE NOT NULL,
-    codigo_contrato INTEGER NOT NULL
+    data_matricula DATE NOT NULL
 );
 
 CREATE TABLE contrato_matricula_aluno (
