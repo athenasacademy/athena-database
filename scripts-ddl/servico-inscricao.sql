@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS inscricao_candidato;
+DROP SEQUENCE IF EXISTS codigo_inscricao_seq;
 
 CREATE SEQUENCE codigo_inscricao_seq START 12345;
 
@@ -14,3 +15,5 @@ CREATE TABLE inscricao_candidato (
   boleto VARCHAR(100),
   boleto_pago BOOLEAN
 );
+
+select * from inscricao_candidato
