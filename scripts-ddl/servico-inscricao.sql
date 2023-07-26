@@ -1,26 +1,19 @@
-DROP TABLE IF EXISTS contrato_matricula_aluno;
-DROP TABLE IF EXISTS matricula_aluno;
-DROP SEQUENCE IF EXISTS matricula_seq;
-DROP SEQUENCE IF EXISTS contrato_seq;
+DROP TABLE IF EXISTS inscricao_candidato;
+DROP SEQUENCE IF EXISTS codigo_inscricao_seq;
 
-CREATE SEQUENCE matricula_seq START 45678;
-CREATE SEQUENCE contrato_seq START 98765;
+CREATE SEQUENCE codigo_inscricao_seq START 12345;
 
-CREATE TABLE matricula_aluno (
-    id SERIAL PRIMARY KEY,
-    matricula INTEGER DEFAULT nextval('matricula_seq'),
-    ativa BOOLEAN NOT null default false,
-    codigo_aluno INTEGER NOT NULL,
-    nome_aluno VARCHAR(100) NOT NULL,
-    data_matricula DATE NOT NULL
+CREATE TABLE inscricao_candidato (
+  id SERIAL PRIMARY KEY,
+  codigo_inscricao INTEGER DEFAULT nextval('codigo_inscricao_seq') NOT NULL,
+  data_inscricao DATE NOT NULL,
+  nome VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  telefone VARCHAR(20),
+  codigo_curso VARCHAR(50),
+  nome_curso VARCHAR(100),
+  boleto VARCHAR(100),
+  boleto_pago BOOLEAN
 );
 
-CREATE TABLE contrato_matricula_aluno (
-    id SERIAL PRIMARY KEY,
-    id_matricula INTEGER REFERENCES matricula_aluno (id),
-    contrato INTEGER DEFAULT nextval('contrato_seq'),
-    assinado BOOLEAN NOT null default false,
-    forma_pagamento VARCHAR(50) NOT NULL,
-    valor_contrato NUMERIC(10, 2) NOT NULL,
-    data_aceite DATE NOT NULL
-);
+select * from inscricao_candidato
