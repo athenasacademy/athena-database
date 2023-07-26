@@ -17,7 +17,6 @@ CREATE TABLE usuario (
   usuario VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL,
   senha_hash VARCHAR(100) NOT NULL,
-  id_detalhe_usuario INTEGER REFERENCES detalhe_usuario(id),
   id_perfil INTEGER REFERENCES perfil(id),
   ativo BOOLEAN NOT NULL DEFAULT true,
   data_cadastro TIMESTAMP DEFAULT NOW(),
@@ -90,7 +89,7 @@ CREATE TABLE inscricao_candidato (
 
 
 --- aluno 
-DROP TABLE IF EXISTS detalhe;
+DROP TABLE IF EXISTS detalhe_aluno;
 DROP TABLE IF EXISTS telefone;
 DROP TABLE IF EXISTS endereco;
 DROP TABLE IF EXISTS aluno CASCADE;
@@ -186,7 +185,7 @@ CREATE TABLE certificado (
   carga_horaria_curso INTEGER NOT NULL,
   aproveitamento NUMERIC(5, 2) NOT NULL,
   data_conclusao DATE NOT NULL,
-  gerado BOOLEAN NOT NULL DEFAULT false
+  gerado BOOLEAN NOT NULL DEFAULT false,
   caminho_certificado_pdf TEXT,
   caminho_certificado_png TEXT
 );
