@@ -1,4 +1,4 @@
---- usuario
+-- usuario
 DROP TABLE IF EXISTS detalhe_usuario;
 DROP TABLE IF EXISTS usuario;
 DROP TABLE IF EXISTS perfil;
@@ -32,7 +32,7 @@ CREATE TABLE detalhe_usuario (
   data_alteracao TIMESTAMP
 );
 
----- curso
+--curso
 DROP TABLE IF EXISTS disciplina;
 DROP TABLE IF EXISTS curso;
 DROP TABLE IF EXISTS area_conhecimento;
@@ -68,7 +68,7 @@ CREATE TABLE disciplina (
   data_alteracao TIMESTAMP
 );
 
----- inscricao
+--inscricao
 DROP TABLE IF EXISTS inscricao_candidato;
 DROP SEQUENCE IF EXISTS codigo_inscricao_seq;
 
@@ -88,7 +88,7 @@ CREATE TABLE inscricao_candidato (
 );
 
 
---- aluno 
+--aluno 
 DROP TABLE IF EXISTS detalhe_aluno;
 DROP TABLE IF EXISTS telefone;
 DROP TABLE IF EXISTS endereco;
@@ -142,8 +142,7 @@ CREATE TABLE detalhe_aluno (
   data_contrato DATE
 );
 
---- matricula
-
+--matricula
 DROP TABLE IF EXISTS contrato_matricula_aluno;
 DROP TABLE IF EXISTS matricula_aluno;
 
@@ -159,7 +158,7 @@ CREATE TABLE matricula_aluno (
     ativa BOOLEAN NOT null default false,
     codigo_aluno INTEGER NOT NULL,
     nome_aluno VARCHAR(100) NOT NULL,
-    data_matricula DATE NOT NULL
+    data_matricula DATE NULL
 );
 
 CREATE TABLE contrato_matricula_aluno (
@@ -169,11 +168,11 @@ CREATE TABLE contrato_matricula_aluno (
     assinado BOOLEAN NOT null default false,
     forma_pagamento VARCHAR(50) NOT NULL,
     valor_contrato NUMERIC(10, 2) NOT NULL,
-    data_aceite DATE NOT NULL
+	contrato_matricula VARCHAR(50),
+    data_aceite DATE null
 );
 
---- certificado
-
+--certificado
 DROP TABLE IF EXISTS certificado;
 
 CREATE TABLE certificado (
